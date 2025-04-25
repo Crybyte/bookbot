@@ -1,3 +1,5 @@
+from stats import get_num_words
+
 def get_book_text(fpath):
     txt = None
 
@@ -11,14 +13,9 @@ def main():
 
     text = get_book_text(path)
 
-    words = None
-    words = text.split()
+    num_words = get_num_words(text)
 
-    count = 0
-    for word in words:
-        count += 1
-
-    print(f"{count} words found in the document")
+    print(f"{num_words} words found in the document")
 
     return
 
