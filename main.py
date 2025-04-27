@@ -1,6 +1,7 @@
 from stats import get_num_words
 from stats import get_char_stats
 from stats import sort_stats
+import sys
 
 def get_book_text(fpath):
     txt = None
@@ -11,7 +12,13 @@ def get_book_text(fpath):
 
 def main():
     text = None
-    path = "books/frankenstein.txt"
+    # path = "books/frankenstein.txt"
+
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    path = sys.argv[1]
 
     text = get_book_text(path)
 
